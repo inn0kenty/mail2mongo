@@ -20,7 +20,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from bson import ObjectId
 from pymongo.errors import PyMongoError
 
-__version__ = '0.3.0'
+__version__ = '0.3.2'
 
 LOG = logging.getLogger('mail2mongo')
 
