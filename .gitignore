@@ -1,0 +1,8 @@
+venv
+**.pyc
+.mypy_cache
+.vscode
+ws_client.py
+build
+dist
+*.spec

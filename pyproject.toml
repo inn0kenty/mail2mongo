@@ -1,0 +1,29 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "mail2mongo"
+author = "Innokenty Lebedev"
+author-email = "innlebedev@protonmail.com"
+home-page = "https://github.com/inn0kenty/mail2mongo"
+requires-python = ">=3.5"
+requires = [
+    "aiohttp>=3.1.3,<4",
+    "aiosmtpd>=1.1,<2",
+    "cchardet>=2.1.1,<3",
+    "motor>=1.2.1,<4"
+]
+dev-requires = [
+    "pylint",
+    "mypy",
+    "pyinstaller"
+]
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.5",
+	"Programming Language :: Python :: 3.6"
+]
+
+[tool.flit.scripts]
+mail2mongo = "mail2mongo:entrypoint"
