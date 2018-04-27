@@ -192,7 +192,7 @@ class Application(object):  # pylint: disable=too-many-instance-attributes
         rcpt = request.headers.get('Auth-SMTP-To', '')
         rcpt = rcpt.split('<')[1].split('>')[0].split('@')[1]
 
-        check_passed = any(map(lambda x: x in rcpt, self._allow_domains))
+        check_passed = [x for x in self._allow_domains if x == rcpt]
         if not check_passed:
             response = {
                 'Auth-Status': 'FORBIDDEN',
