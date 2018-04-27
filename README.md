@@ -49,6 +49,14 @@ From Docker image
 $ docker run -p 8080:8080 -p 8025:8025 inn0kenty/mail2mongo -d example.com -m mongodb://192.168.0.100:27017
 ```
 
+Or with dockered mongo
+
+```bash
+$ docker network create mail2mongo
+$ docker run --name mongo --net mail2mongo -d mongo
+$ docker run -p 8080:8080 -p 8025:8025 --net mail2mongo inn0kenty/mail2mongo -d example.com -m mongodb://mongo
+```
+
 ## nginx
 
 File `/etc/nginx/nginx.conf` should contains:
